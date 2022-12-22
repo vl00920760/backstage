@@ -29,15 +29,15 @@ import {
 import { withTheme } from '@rjsf/core-v5';
 import { ErrorSchema, FieldValidation } from '@rjsf/utils';
 import React, { useMemo, useState } from 'react';
-import { NextFieldExtensionOptions } from '../../../extensions';
+import { NextFieldExtensionOptions } from '../../extensions';
 import { TemplateParameterSchema } from '../../../types';
 import { createAsyncValidators } from './createAsyncValidators';
-import { useTemplateSchema } from './useTemplateSchema';
+import { useTemplateSchema } from '../../hooks/useTemplateSchema';
 import { ReviewState } from './ReviewState';
 import validator from '@rjsf/validator-ajv6';
-import { selectedTemplateRouteRef } from '@backstage/plugin-scaffolder-react';
+import { selectedTemplateRouteRef } from '../../../routes';
 import { getDefaultFormState } from '@rjsf/utils';
-import { useFormData } from './useFormData';
+import { useFormData } from '../../hooks/useFormData';
 import { FormProps } from '../../types';
 
 const useStyles = makeStyles(theme => ({
@@ -67,6 +67,9 @@ export type StepperProps = {
 // of the re-writing we're doing. Once we've migrated, we can import this the exact same as before.
 const Form = withTheme(require('@rjsf/material-ui-v5').Theme);
 
+/**
+ * @alpha
+ */
 export const Stepper = (props: StepperProps) => {
   const { templateName } = useRouteRefParams(selectedTemplateRouteRef);
   const analytics = useAnalytics();
