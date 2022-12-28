@@ -1,5 +1,18 @@
 # @backstage/cli
 
+## 0.22.1-next.1
+
+### Patch Changes
+
+- 4b572126f1: Add experimental environment variable to enable caching for production builds.
+- Updated dependencies
+  - @backstage/cli-common@0.1.11
+  - @backstage/config@1.0.5
+  - @backstage/config-loader@1.1.7
+  - @backstage/errors@1.1.4
+  - @backstage/release-manifests@0.0.8
+  - @backstage/types@1.0.2
+
 ## 0.22.1-next.0
 
 ### Patch Changes
